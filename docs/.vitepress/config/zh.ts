@@ -71,8 +71,8 @@ function sidebarGeneral(): DefaultTheme.SidebarItem[] {
           link: "/zh/general/index",
         },
         {
-          text: "FAQ",
-          link: "/general/faq",
+          text: "常见问题解答",
+          link: "/zh/general/faq",
         },
         // {
         //   text: "Setup Guide",
