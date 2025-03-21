@@ -14,3 +14,4 @@ Traducciones
 
 - [Inglés](/general/)
 - [Portugués](/pt/general/)
+- [Escritura China](/zh/general/)

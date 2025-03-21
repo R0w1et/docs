@@ -63,12 +63,12 @@ function nav(): DefaultTheme.NavItem[] {
 function sidebarGeneral(): DefaultTheme.SidebarItem[] {
   return [
     {
-      text: "General",
+      text: "通用文档",
       collapsed: false,
       items: [
         {
-          text: "Index",
-          link: "/general/index",
+          text: "目录",
+          link: "/zh/general/index",
         },
         {
           text: "FAQ",

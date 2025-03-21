@@ -14,3 +14,4 @@ Translations
 
 - [Portuguese](/pt/general/index)
 - [Spanish](/es/general/index)
+- [Simple Chinese](/zh/general/index)
