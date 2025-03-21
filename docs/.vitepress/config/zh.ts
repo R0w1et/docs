@@ -1,0 +1,534 @@
+import { defineConfig, type DefaultTheme } from "vitepress";
+
+export const zh = defineConfig({
+  lang: "zh",
+  description: "访问RetroAchievements的综合指南、教程和开发人员资源。了解如何通过自定义成就来增强您的复古游戏体验。",
+
+  themeConfig: {
+    nav: nav(),
+
+    sidebar: {
+      "/zh/general/": sidebarGeneral(),
+      "/zh/guidelines/": sidebarGuidelines(),
+      "/zh/developer-docs": sidebarDeveloperDocs(),
+    },
+
+    editLink: {
+      pattern: "https://github.com/RetroAchievements/docs/edit/main/docs/:path",
+      text: "编辑此页面",
+    },
+
+    footer: {
+      message: "在GPL-3许可下发布。RetroAchievements不提供受版权保护的Rom的下载方式。",
+      copyright: `Copyright © 2012–${new Date().getFullYear()} RetroAchievements. All rights reserved.`,
+    },
+
+    lastUpdated: {
+      text: "上次更新",
+      formatOptions: {
+        dateStyle: "short",
+        timeStyle: "medium",
+      },
+    },
+
+    langMenuLabel: "切换语言",
+    returnToTopLabel: "回到顶部",
+    sidebarMenuLabel: "侧边栏",
+    darkModeSwitchLabel: "切换主题",
+    lightModeSwitchTitle: "切换到明亮主题",
+    darkModeSwitchTitle: "切换到黑暗主题",
+  },
+});
+
+function nav(): DefaultTheme.NavItem[] {
+  return [
+    {
+      text: "通用文档",
+      link: "/general/index",
+      activeMatch: "/zh/general/",
+    },
+    {
+      text: "指南",
+      link: "/zh/guidelines/users/retroachievements-manifesto",
+      activeMatch: "/zh/guidelines/",
+    },
+    {
+      text: "开发者文档",
+      link: "/zh/developer-docs/index",
+      activeMatch: "/zh/developer-docs/",
+    },
+  ];
+}
+
+function sidebarGeneral(): DefaultTheme.SidebarItem[] {
+  return [
+    {
+      text: "General",
+      collapsed: false,
+      items: [
+        {
+          text: "Index",
+          link: "/general/index",
+        },
+        {
+          text: "FAQ",
+          link: "/general/faq",
+        },
+        // {
+        //   text: "Setup Guide",
+        //   link: "/general/setup-guide",
+        // },
+        {
+          text: "Emulator Support",
+          link: "/general/emulator-support-and-issues",
+        },
+        {
+          text: "How RA Works",
+          link: "/general/how-ra-works",
+        },
+        {
+          text: "Ways to Contribute",
+          link: "/general/ways-to-contribute",
+        },
+        {
+          text: "RABot, the RA Discord Robot",
+          link: "/general/rabot",
+        },
+        {
+          text: "Events",
+          link: "/general/events",
+        },
+        {
+          text: "Overlay Themes",
+          link: "/general/overlay-themes",
+        },
+        {
+          text: "Useful Links",
+          link: "/general/useful-links",
+        },
+        {
+          text: "Contributing to the Docs",
+          link: "/general/contributing-to-the-docs",
+        },
+        {
+          text: "About Us",
+          link: "/general/about-us",
+        },
+      ],
+    },
+    {
+      text: "Teams",
+      collapsed: false,
+      items: [
+        {
+          text: "Quality Assurance",
+          link: "/general/teams/qa-team",
+        },
+      ],
+    },
+    {
+      text: "Tutorials",
+      collapsed: false,
+      items: [
+        {
+          text: "How to configure OBS Studio to see the popups",
+          link: "/general/tutorials/how-to-configure-obs-studio",
+        },
+        {
+          text: "Multi-Disc Games",
+          link: "/general/tutorials/multi-disc-games",
+        },
+        {
+          text: "Turbo Buttons",
+          link: "/general/tutorials/turbo-button",
+        },
+        {
+          text: "Working with DLC for the PlayStation Portable",
+          link: "/general/tutorials/working-with-dlc-for-the-psp",
+        },
+        {
+          text: "How to Play Subsets",
+          link: "/general/tutorials/how-to-play-subsets",
+        },
+      ],
+    },
+  ];
+}
+
+function sidebarGuidelines(): DefaultTheme.SidebarItem[] {
+  return [
+    {
+      text: "User Guidelines",
+      collapsed: false,
+      items: [
+        {
+          text: "RetroAchievements Manifesto",
+          link: "/guidelines/users/retroachievements-manifesto",
+        },
+        {
+          text: "Users Code of Conduct",
+          link: "/guidelines/users/code-of-conduct",
+        },
+        {
+          text: "Global Leaderboard and Achievement Hunting Rules",
+          link: "/guidelines/users/global-leaderboard-and-achievement-hunting-rules",
+        },
+      ],
+    },
+    {
+      text: "Developer Guidelines",
+      collapsed: false,
+      items: [
+        {
+          text: "Developers Code of Conduct",
+          link: "/guidelines/developers/code-of-conduct",
+        },
+        {
+          text: "Creating Entries",
+          link: "/guidelines/developers/creating-entries",
+        },
+        {
+          text: "Claims System",
+          link: "/guidelines/developers/claims-system",
+        },
+        {
+          text: "Handling Tickets",
+          link: "/guidelines/developers/handling-tickets",
+        },
+      ],
+    },
+    {
+      text: "Content Guidelines",
+      collapsed: false,
+      items: [
+        {
+          text: "Achievement Set Requirements",
+          link: "/guidelines/content/achievement-set-requirements",
+        },
+        {
+          text: "Unwelcome Concepts",
+          link: "/guidelines/content/unwelcome-concepts",
+        },
+        {
+          text: "Progression and Win Condition Guidelines",
+          link: "/guidelines/content/progression-and-win-condition-guidelines",
+        },
+        {
+          text: "Set Plagiarism",
+          link: "/guidelines/content/set-plagiarism",
+        },
+        {
+          text: "Naming Conventions",
+          link: "/guidelines/content/naming-conventions",
+        },
+        {
+          text: "Writing Policy",
+          link: "/guidelines/content/writing-policy",
+        },
+        {
+          text: "Badge and Icon Guidelines",
+          link: "/guidelines/content/badge-and-icon-guidelines",
+        },
+        {
+          text: "Code Notes",
+          link: "/guidelines/content/code-notes",
+        },
+        {
+          text: "Editing Leaderboards",
+          link: "/guidelines/content/editing-leaderboards",
+        },
+        {
+          text: "Achievement Set Revisions",
+          link: "/guidelines/content/achievement-set-revisions",
+        },
+        {
+          text: "Adding Additional Hashes",
+          link: "/guidelines/content/adding-hashes",
+        },
+        {
+          text: "Player Compatibility Testing",
+          link: "/guidelines/content/player-compatibility-testing",
+        },
+        {
+          text: "Achievements for ROM Hacks",
+          link: "/guidelines/content/achievements-for-rom-hacks",
+        },
+        {
+          text: "Subsets",
+          link: "/guidelines/content/subsets",
+        },
+        {
+          text: "Working with the Right ROM",
+          link: "/guidelines/content/working-with-the-right-rom",
+        },
+        {
+          text: "Hash Labels",
+          link: "/guidelines/content/hash-labels",
+        },
+      ],
+    },
+  ];
+}
+
+function sidebarDeveloperDocs(): DefaultTheme.SidebarItem[] {
+  return [
+    {
+      text: "Development",
+      collapsed: false,
+      items: [
+        {
+          text: "Index",
+          link: "/developer-docs/index",
+        },
+        {
+          text: "How to Become an Achievement Developer",
+          link: "/developer-docs/how-to-become-an-achievement-developer",
+        },
+        {
+          text: "Getting Started as an Achievement Developer",
+          link: "/developer-docs/getting-started-as-an-achievement-developer",
+        },
+        {
+          text: "Junior Developer Program",
+          link: "/developer-docs/jr-dev-rules",
+        },
+        {
+          text: "Am I Ready for Code Review?",
+          link: "/developer-docs/am-i-ready-for-review",
+        },
+        {
+          text: "Emulator Setup for Developers",
+          link: "/developer-docs/emulator-setup-for-developers",
+        },
+        {
+          text: "Game Identification",
+          link: "/developer-docs/game-identification",
+        },
+        {
+          text: "Achievement Design",
+          link: "/developer-docs/achievement-design",
+        },
+        {
+          text: "Achievement Scoring",
+          link: "/developer-docs/achievement-scoring",
+        },
+        {
+          text: "Difficulty Scale and Balance",
+          link: "/developer-docs/difficulty-scale-and-balance",
+        },
+        {
+          text: "Progression and Win Condition Typing",
+          link: "/guidelines/content/progression-and-win-condition-guidelines",
+        },
+        {
+          text: "Badge and Icon Creation",
+          link: "/developer-docs/badge-and-icon-creation",
+        },
+        {
+          text: "Achievement Development Overview",
+          link: "/developer-docs/achievement-development-overview",
+        },
+        {
+          text: "Minimum Required Versions for Logic Features",
+          link: "/developer-docs/minimum-required-versions-for-logic-features",
+        },
+        {
+          text: "Memory Inspector",
+          link: "/developer-docs/memory-inspector",
+        },
+        {
+          text: "Real Examples",
+          link: "/developer-docs/real-examples",
+        },
+        {
+          text: "Achievement Templates",
+          link: "/developer-docs/achievement-templates",
+        },
+        {
+          text: "Save and Password Protection",
+          link: "/developer-docs/save-and-password-protection",
+        },
+        {
+          text: "Tips and Tricks",
+          link: "/developer-docs/tips-and-tricks",
+        },
+        {
+          text: "Leaderboards",
+          link: "/developer-docs/leaderboards",
+        },
+        {
+          text: "Rich Presence",
+          link: "/developer-docs/rich-presence",
+        },
+        {
+          text: "Rollouts",
+          link: "/developer-docs/rollouts",
+        },
+        {
+          text: "DevQuests",
+          link: "/developer-docs/devquests",
+        },
+        {
+          text: "DevJam",
+          link: "/developer-docs/devjam",
+        },
+        {
+          text: "RATools",
+          link: "/developer-docs/ratools",
+        },
+        {
+          text: "Console Specific Tips",
+          link: "/developer-docs/console-specific-tips",
+        },
+        {
+          text: "Do I Really Need to Use Delta?",
+          link: "/developer-docs/why-delta",
+        },
+        {
+          text: "Emulator Hotkeys for Developers",
+          link: "/developer-docs/emulator-hotkeys-for-developers",
+        },
+        {
+          text: "Unsupported Emulators and Cores",
+          link: "/developer-docs/unsupported-emulators-and-cores",
+        },
+        {
+          text: "libretro core support",
+          link: "/developer-docs/libretro-core-support",
+        },
+      ],
+    },
+    {
+      text: "Flags",
+      collapsed: false,
+      items: [
+        {
+          text: "ResetIf",
+          link: "/developer-docs/flags/resetif",
+        },
+        {
+          text: "ResetNextIf",
+          link: "/developer-docs/flags/resetnextif",
+        },
+        {
+          text: "PauseIf",
+          link: "/developer-docs/flags/pauseif",
+        },
+        {
+          text: "AndNext and OrNext",
+          link: "/developer-docs/flags/andnext-ornext",
+        },
+        {
+          text: "AddSource",
+          link: "/developer-docs/flags/addsource",
+        },
+        {
+          text: "SubSource",
+          link: "/developer-docs/flags/subsource",
+        },
+        {
+          text: "AddHits and SubHits",
+          link: "/developer-docs/flags/addhits-subhits",
+        },
+        {
+          text: "AddAddress",
+          link: "/developer-docs/flags/addaddress",
+        },
+        {
+          text: "Measured",
+          link: "/developer-docs/flags/measured",
+        },
+        {
+          text: "Trigger",
+          link: "/developer-docs/flags/trigger",
+        },
+        {
+          text: "Remember",
+          link: "/developer-docs/flags/remember",
+        },
+      ],
+    },
+    {
+      text: "Additional Functionality",
+      collapsed: false,
+      items: [
+        {
+          text: "BitCount Size",
+          link: "/developer-docs/bitcount-size",
+        },
+        {
+          text: "Alt Groups",
+          link: "/developer-docs/alt-groups",
+        },
+        {
+          text: "Hit Counts",
+          link: "/developer-docs/hit-counts",
+        },
+        {
+          text: "Delta Values",
+          link: "/developer-docs/delta-values",
+        },
+        {
+          text: "Prior Values",
+          link: "/developer-docs/prior-values",
+        },
+        {
+          text: "Recall",
+          link: "/developer-docs/recall",
+        },
+        {
+          text: "Value Definition",
+          link: "/developer-docs/value-definition",
+        },
+        {
+          text: "Condition Syntax",
+          link: "/developer-docs/condition-syntax",
+        },
+      ],
+    },
+  ];
+}
+
+export const search: DefaultTheme.AlgoliaSearchOptions["locales"] = {
+  zh: {
+    placeholder: "搜索文档",
+    translations: {
+      button: {
+        buttonText: "搜索",
+        buttonAriaLabel: "搜索",
+      },
+      modal: {
+        searchBox: {
+          resetButtonTitle: "清空",
+          resetButtonAriaLabel: "清空",
+          cancelButtonText: "取消",
+          cancelButtonAriaLabel: "取消",
+        },
+        startScreen: {
+          recentSearchesTitle: "最近搜索",
+          noRecentSearchesText: "无最近搜索",
+          saveRecentSearchButtonTitle: "添加最近搜索",
+          removeRecentSearchButtonTitle: "移出最近搜索",
+          favoriteSearchesTitle: "收藏夹",
+          removeFavoriteSearchButtonTitle: "移出收藏夹",
+        },
+        errorScreen: {
+          titleText: "搜索错误",
+          helpText: "请检查您的网络连接",
+        },
+        footer: {
+          selectText: "选择",
+          navigateText: "导航",
+          closeText: "关闭",
+          searchByText: "搜索",
+        },
+        noResultsScreen: {
+          noResultsText: "找不到结果",
+          suggestedQueryText: "请更换内容重新搜索",
+          reportMissingResultsText: "找不到您想要的内容？",
+          reportMissingResultsLinkText: "点击发送反馈",
+        },
+      },
+    },
+  },
+};
